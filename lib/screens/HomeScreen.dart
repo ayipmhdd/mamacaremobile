@@ -10,6 +10,12 @@ import '../widgets/DoctorFilterButton.dart';
 import '../widgets/SearchBarHome.dart';
 import './DoctorScreen.dart';
 import './ArtikelScreen.dart';
+import './NotifikasiScreen.dart';
+import './PanduanNutrisi.dart';
+import './PanduanAktivitas.dart';
+import './KalenderKehamilan.dart';
+import './ComunityScreen.dart';
+import './CareBot.dart';
 
 class HomeScreen extends StatefulWidget {
   final String username;
@@ -68,6 +74,34 @@ class HomeScreenState extends State<HomeScreen> {
     final String currentUsername = widget.username;
     final String? currentPhotoUrl = widget.photoUrl;
 
+    void _navigateToService(BuildContext context, String label) {
+      switch (label) {
+        case "Panduan Nutrisi":
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const PanduanNutrisi()));
+          break;
+
+        case "Panduan Aktivitas":
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const PanduanAktivitas()));
+          break;
+
+        case "Kalender Kehamilan":
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const KalenderKehamilan()));
+          break;
+
+        case "Komunitas":
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const CommunityScreen()));
+          break;
+
+        case "CareBot":
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const CareBot()));
+          break;
+
+        default:
+          break;
+      }
+    }
+
+
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar( 
@@ -114,7 +148,12 @@ class HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NotificationScreen()),
+              );
+            },
             padding: EdgeInsets.zero, // biar tidak ada padding default besar
             constraints: const BoxConstraints(), // hilangkan batas default IconButton
             icon: Image.asset(
@@ -171,14 +210,22 @@ class HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 10),
-              Wrap(
-                spacing: 16.0, 
-                runSpacing: 16.0,
-                alignment: WrapAlignment.spaceBetween, 
+              GridView.count(
+                crossAxisCount: 5,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 children: dummyServiceLabels.map((label) {
-                  return ServiceBox(label: label);
+                  return ServiceBox(
+                    label: label,
+                    onTap: () {
+                      _navigateToService(context, label);
+                    },
+                  );
                 }).toList(),
               ),
+
               const SizedBox(height: 20),
 
               // DOKTER

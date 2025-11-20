@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
-
 final List<String> dummyServiceLabels = [
-  "Nutrisi",
-  "Checkup",
-  "Edukasi",
+  "Panduan Nutrisi",
+  "Panduan Aktivitas",
+  "Kalender Kehamilan",
   "Komunitas",
+  "CareBot",
 ];
