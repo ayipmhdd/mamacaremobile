@@ -1,5 +1,11 @@
 // lib/screens/profile_screen.dart
 import 'package:flutter/material.dart';
+import 'KelolaProfileScreen.dart';
+import 'KataSandiScreen.dart';
+import 'KelolaAkunScreen.dart';
+import 'UserGuideScreen.dart';
+import 'HelpdeskScreen.dart';
+import 'FaqMamaCareScreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -101,32 +107,62 @@ class ProfileScreen extends StatelessWidget {
                   _menuItem(
                     icon: Icons.person,
                     title: "Kelola Profil",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const KelolaProfilScreen()),
+                      );
+                    },
                   ),
                   _menuItem(
                     icon: Icons.lock,
                     title: "Kata Sandi",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const KataSandiScreen()),
+                      );
+                    },
                   ),
                   _menuItem(
                     icon: Icons.group,
                     title: "Kelola Akun",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const KelolaAkunScreen()),
+                      );
+                    },
                   ),
                   _menuItem(
                     icon: Icons.menu_book,
                     title: "User Guide",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const UserGuideScreen()),
+                      );
+                    },
                   ),
                   _menuItem(
                     icon: Icons.chat_bubble_outline,
                     title: "Helpdesk",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const HelpdeskScreen()),
+                      );
+                    },
                   ),
                   _menuItem(
                     icon: Icons.help_outline,
                     title: "Pertanyaan Seputar MamaCare",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const FaqMamaCareScreen()),
+                      );
+                    },
                   ),
                 ],
               ),

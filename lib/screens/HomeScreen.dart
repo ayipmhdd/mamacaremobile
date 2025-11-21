@@ -74,7 +74,7 @@ class HomeScreenState extends State<HomeScreen> {
     final String currentUsername = widget.username;
     final String? currentPhotoUrl = widget.photoUrl;
 
-    void _navigateToService(BuildContext context, String label) {
+    void navigateToService(BuildContext context, String label) {
       switch (label) {
         case "Panduan Nutrisi":
           Navigator.push(context, MaterialPageRoute(builder: (_) => const PanduanNutrisi()));
@@ -220,7 +220,7 @@ class HomeScreenState extends State<HomeScreen> {
                   return ServiceBox(
                     label: label,
                     onTap: () {
-                      _navigateToService(context, label);
+                      navigateToService(context, label);
                     },
                   );
                 }).toList(),

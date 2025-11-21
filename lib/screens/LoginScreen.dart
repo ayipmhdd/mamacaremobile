@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+import 'package:mamacaremobile/widgets/CustomButton.dart';
+import 'package:mamacaremobile/widgets/CustomText.dart';
 import 'dart:convert';
 import 'MainScreen.dart';
 
@@ -108,20 +110,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 const SizedBox(height: 24),
-                const Text(
+                CustomText(
                   "Masuk Akun Mama",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  type: TextType.h3,
+                  height: 1.5, 
                 ),
-                const SizedBox(height: 8),
-                const Text(
+                CustomText(
                   "Masukkan email dan password akun Mama!",
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
+                  type: TextType.p,
+                  color: Color(0xFF1e1e1e),
                 ),
+
                 const SizedBox(height: 24),
 
                 // Form Email
@@ -186,27 +185,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 // Tombol Masuk
-                SizedBox(
+                CustomButton(
+                  title: "Masuk",
                   width: double.infinity,
                   height: 48,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFF3EA5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: loginUser,
-                    child: const Text(
-                      "Masuk",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                  backgroundColor: const Color(0xFFFF3EA5),
+                  textColor: Colors.white,
+                  borderRadius: 24,
+                  onPressed: loginUser,
                 ),
+
                 const SizedBox(height: 16),
 
                 // Atau
@@ -233,13 +221,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Color(0xFFFF3EA5)),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(24),
                       ),
                     ),
                     icon: Image.asset("assets/google.png", width: 30),
                     label: const Text(
                       "Lanjutkan dengan Google",
-                      style: TextStyle(color: Color(0XFF000000)),
+                      style: TextStyle(color: Color(0XFF000000), fontSize: 16,),
                     ),
                     onPressed: () {
                       // aksi login dengan Google
