@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:mamacaremobile/widgets/CustomButton.dart';
 import 'package:mamacaremobile/widgets/CustomText.dart';
+import 'package:mamacaremobile/widgets/CustomInputField.dart';
 import 'dart:convert';
 import 'MainScreen.dart';
 
@@ -124,41 +125,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
 
                 // Form Email
-                TextField(
+                CustomInputField(
                   controller: _emailCtrl,
-                  decoration: InputDecoration(
-                    hintText: "Email address",
-                    contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
-                    ),
-                  ),
+                  hintText: "Email address",
+                  icon: Icons.email,
                 ),
+
                 const SizedBox(height: 16),
 
                 // Form Password
-                TextField(
+                CustomInputField(
                   controller: _passwordCtrl,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
-                    ),
-                  ),
+                  hintText: "Password",
+                  icon: Icons.lock,
+                  isPassword: true,
                 ),
 
                 // Lupa password

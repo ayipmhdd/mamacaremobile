@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+import 'package:mamacaremobile/widgets/CustomInputField.dart';
 import 'dart:convert';
-
 import 'LoginScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -114,23 +114,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 24),
 
                 // Username
-                _buildTextField("Username", controller: _usernameCtrl),
+                CustomInputField(
+                  controller: _usernameCtrl,
+                  hintText: "Username",
+                  icon: Icons.person,
+                ),
                 const SizedBox(height: 16),
 
                 // Email
-                _buildTextField("Email address", controller: _emailCtrl),
+                CustomInputField(
+                  controller: _emailCtrl,
+                  hintText: "Email address",
+                  icon: Icons.email,
+                ),
                 const SizedBox(height: 16),
 
                 // Phone
-                _buildTextField("Phone", controller: _phoneCtrl),
+                CustomInputField(
+                  controller: _phoneCtrl,
+                  hintText: "Phone",
+                  icon: Icons.phone,
+                ),
                 const SizedBox(height: 16),
 
                 // Password
-                _buildTextField("Password", isPassword: true, controller: _passwordCtrl),
+                CustomInputField(
+                  controller: _passwordCtrl,
+                  hintText: "Password",
+                  icon: Icons.lock,
+                  isPassword: true,
+                ),
                 const SizedBox(height: 16),
 
                 // Confirm Password
-                _buildTextField("Confirm password", isPassword: true, controller: _confirmCtrl),
+                CustomInputField(
+                  controller: _confirmCtrl,
+                  hintText: "Confirm password",
+                  icon: Icons.lock_outline,
+                  isPassword: true,
+                ),
                 const SizedBox(height: 24),
 
                 // Tombol Daftar
@@ -184,26 +206,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTextField(String hint,
-      {bool isPassword = false, TextEditingController? controller}) {
-    return TextField(
-      controller: controller,
-      obscureText: isPassword,
-      decoration: InputDecoration(
-        hintText: hint,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: Color(0xFFFF3EA5)),
         ),
       ),
     );
