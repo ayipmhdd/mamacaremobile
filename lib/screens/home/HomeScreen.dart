@@ -1,21 +1,21 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import '../widgets/ScheduleStackCard.dart'; 
-import '../widgets/ServiceBox.dart';
-import '../models/ServiceModel.dart';
-import '../widgets/ArticleSection.dart';
-import '../widgets/DoctorListItem.dart';
-import '../widgets/DoctorFilterButton.dart';
-import '../widgets/SearchBarHome.dart';
-import './DoctorScreen.dart';
-import './ArtikelScreen.dart';
-import './NotifikasiScreen.dart';
-import './PanduanNutrisi.dart';
-import './PanduanAktivitas.dart';
-import './KalenderKehamilan.dart';
-import './ComunityScreen.dart';
-import './CareBot.dart';
+import '../../layouts/ScheduleStackCard.dart'; 
+import '../../widgets/ServiceBox.dart';
+import '../../models/ServiceModel.dart';
+import '../../layouts/ArticleSection.dart';
+import '../../layouts/DoctorListItem.dart';
+import '../../widgets/DoctorFilterButton.dart';
+import '../../widgets/SearchBar.dart';
+import '../dokter/DoctorScreen.dart';
+import '../artikel/ArtikelScreen.dart';
+import 'NotifikasiScreen.dart';
+import '../layanan/PanduanNutrisi.dart';
+import '../layanan/PanduanAktivitas.dart';
+import '../layanan/KalenderKehamilan.dart';
+import '../komunitas/ComunityScreen.dart';
+import '../layanan/CareBot.dart';
 
 class HomeScreen extends StatefulWidget {
   final String username;

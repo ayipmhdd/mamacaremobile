@@ -1,6 +1,6 @@
 // lib/screens/doctor_screen.dart
 import 'package:flutter/material.dart';
-import 'package:mamacaremobile/screens/BookingDokter.dart';
+import 'package:mamacaremobile/screens/dokter/BookingDokter.dart';
 
 class DoctorScreen extends StatefulWidget {
   const DoctorScreen({super.key});

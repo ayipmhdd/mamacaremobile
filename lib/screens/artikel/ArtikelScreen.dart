@@ -1,6 +1,6 @@
 // lib/screens/article_screen.dart
 import 'package:flutter/material.dart';
-import '../widgets/ArticleSection.dart';
+import '../../layouts/ArticleSection.dart';
 import 'ArtikelDetailScreen.dart'; // import halaman detail
 
 class ArticleScreen extends StatelessWidget {

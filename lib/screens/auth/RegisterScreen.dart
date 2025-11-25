@@ -3,9 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:mamacaremobile/widgets/CustomInputField.dart';
 import 'dart:convert';
+
 import 'LoginScreen.dart';
+import 'package:mamacaremobile/components/Logo.dart';
+import 'package:mamacaremobile/widgets/CustomText.dart';
+import 'package:mamacaremobile/widgets/CustomButton.dart';
+import 'package:mamacaremobile/widgets/CustomInputField.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -88,28 +92,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 20),
 
                 // Logo & Judul
-                Row(
-                  children: [
-                    Image.asset("assets/logo.png", width: 40),
-                    const SizedBox(width: 8),
-                    const Text(
-                      "MamaCare",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ],
-                ),
+                const Logo(),
+
                 const SizedBox(height: 24),
 
-                const Text(
+                CustomText(
                   "Daftar Akun Mama",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFF3EA5),
-                  ),
+                  type: TextType.h3,
+                  height: 1.5, 
                 ),
                 const SizedBox(height: 24),
 
@@ -156,26 +146,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 24),
 
                 // Tombol Daftar
-                SizedBox(
+                CustomButton(
+                  title: "Daftar",
                   width: double.infinity,
                   height: 48,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFF3EA5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: registerUser,
-                    child: const Text(
-                      "Daftar",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                  backgroundColor: const Color(0xFFFF3EA5),
+                  textColor: Colors.white,
+                  borderRadius: 24,
+                  onPressed: registerUser,
                 ),
                 const SizedBox(height: 16),
 

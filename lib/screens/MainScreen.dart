@@ -1,10 +1,10 @@
 // lib/screens/main_screen.dart
 import 'package:flutter/material.dart';
-import '../widgets/CustomBottomNavBar.dart';
-import 'HomeScreen.dart';
-import 'ArtikelScreen.dart';
-import 'ComunityScreen.dart';
-import 'ProfileScreen.dart';
+import '../layouts/CustomBottomNavBar.dart';
+import 'home/HomeScreen.dart';
+import 'artikel/ArtikelScreen.dart';
+import 'komunitas/ComunityScreen.dart';
+import 'profile/ProfileScreen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

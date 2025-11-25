@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/SplashScreen.dart';
+import 'screens/welcome/SplashScreen.dart';
 import 'package:flutter/services.dart';
 import 'services/ApiService.dart';
 
