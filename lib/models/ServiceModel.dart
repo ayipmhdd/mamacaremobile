@@ -4,5 +4,5 @@ final List<String> dummyServiceLabels = [
   "Panduan Aktivitas",
   "Kalender Kehamilan",
   "Komunitas",
-  "CareBot",
+  "Mama.ai",
 ];
