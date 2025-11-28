@@ -1,4 +1,4 @@
-// lib/screens/kelola_akun_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class KelolaAkunScreen extends StatelessWidget {

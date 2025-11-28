@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
-
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'WelcomeScreen.dart';
+
+import 'package:mamacaremobile/screens/welcome/WelcomeScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

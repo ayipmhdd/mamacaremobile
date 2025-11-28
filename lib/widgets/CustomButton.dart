@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
   final double width;
   final double height;
+  final double fontSize;
   final bool outlined;
   final double borderRadius;
   final Color? backgroundColor;
@@ -20,6 +22,7 @@ class CustomButton extends StatelessWidget {
     this.height = 48,
     this.outlined = false,
     this.borderRadius = 50,
+    this.fontSize = 16,               // DEFAULT FONTSIZE
     this.backgroundColor,
     this.textColor,
     this.borderColor,
@@ -45,7 +48,7 @@ class CustomButton extends StatelessWidget {
             title,
             style: TextStyle(
               color: textColor ?? Colors.black,
-              fontSize: 16,
+              fontSize: fontSize,                 // <- FONT CUSTOM BERJALAN
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -69,7 +72,7 @@ class CustomButton extends StatelessWidget {
           title,
           style: TextStyle(
             color: textColor ?? Colors.white,
-            fontSize: 16,
+            fontSize: fontSize,                   // <- MENGGUNAKAN PARAMETER
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -78,10 +81,10 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-/// ===============================================================
-///                   CUSTOM TEXT BUTTON (BARU)
-/// ===============================================================
 
+/// ===============================================================
+///                   CUSTOM TEXT BUTTON
+/// ===============================================================
 class CustomTextButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;

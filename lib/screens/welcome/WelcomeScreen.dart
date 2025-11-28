@@ -1,8 +1,11 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:mamacaremobile/screens/auth/LoginScreen.dart';
-import 'package:mamacaremobile/widgets/CustomButton.dart';
+
 import 'package:mamacaremobile/widgets/CustomText.dart';
-import '../auth/RegisterScreen.dart';
+import 'package:mamacaremobile/widgets/CustomButton.dart';
+
+import 'package:mamacaremobile/screens/auth/LoginScreen.dart';
+import 'package:mamacaremobile/screens/auth/RegisterScreen.dart';
 
 // Entry point
 void main() {

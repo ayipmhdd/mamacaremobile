@@ -1,7 +1,8 @@
-// lib/screens/article_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import '../../layouts/ArticleSection.dart';
-import 'ArtikelDetailScreen.dart'; // import halaman detail
+
+import 'package:mamacaremobile/layouts/ArticleSection.dart';
+import 'package:mamacaremobile/screens/artikel/ArtikelDetailScreen.dart';
 
 class ArticleScreen extends StatelessWidget {
   const ArticleScreen({super.key});

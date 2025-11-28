@@ -1,17 +1,18 @@
 // ignore_for_file: file_names
-
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+
+import 'package:flutter/services.dart';
 import 'package:mamacaremobile/components/Logo.dart';
+import 'package:mamacaremobile/screens/MainScreen.dart';
+
 import 'package:mamacaremobile/widgets/CustomButton.dart';
 import 'package:mamacaremobile/widgets/CustomText.dart';
 import 'package:mamacaremobile/widgets/CustomInputField.dart';
-import 'dart:convert';
-import '../MainScreen.dart';
 
-import 'ForgotPasswordScreen.dart';
-import 'RegisterScreen.dart';
+import 'package:mamacaremobile/screens/auth/RegisterScreen.dart';
+import 'package:mamacaremobile/screens/auth/ForgotPasswordScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

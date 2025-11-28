@@ -1,8 +1,9 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:mamacaremobile/screens/artikel/ArtikelScreen.dart';
-import 'package:mamacaremobile/screens/dokter/DoctorScreen.dart';
+
 import 'package:mamacaremobile/screens/home/HomeScreen.dart';
-// import screen lainnya sesuai kebutuhan
+import 'package:mamacaremobile/screens/dokter/DoctorScreen.dart';
+import 'package:mamacaremobile/screens/artikel/ArtikelScreen.dart';
 
 class AppRoute {
   static toHome(BuildContext context) {

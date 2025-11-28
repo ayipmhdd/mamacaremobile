@@ -1,5 +1,4 @@
-// lib/screens/kelola_profil_screen.dart
-
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class KelolaProfilScreen extends StatelessWidget {

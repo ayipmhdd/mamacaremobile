@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-
 class Schedule {
   final String name;
   final String title;

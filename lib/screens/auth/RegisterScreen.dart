@@ -1,15 +1,16 @@
 // ignore_for_file: file_names
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-import 'LoginScreen.dart';
+import 'package:flutter/services.dart';
 import 'package:mamacaremobile/components/Logo.dart';
+
 import 'package:mamacaremobile/widgets/CustomText.dart';
 import 'package:mamacaremobile/widgets/CustomButton.dart';
 import 'package:mamacaremobile/widgets/CustomInputField.dart';
+
+import 'package:mamacaremobile/screens/auth/LoginScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

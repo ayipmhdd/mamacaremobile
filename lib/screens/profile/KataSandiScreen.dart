@@ -1,4 +1,4 @@
-// lib/screens/kata_sandi_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class KataSandiScreen extends StatefulWidget {

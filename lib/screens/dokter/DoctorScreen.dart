@@ -1,5 +1,6 @@
-// lib/screens/doctor_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
+
 import 'package:mamacaremobile/screens/dokter/BookingDokter.dart';
 
 class DoctorScreen extends StatefulWidget {

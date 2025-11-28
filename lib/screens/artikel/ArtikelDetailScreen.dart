@@ -1,4 +1,4 @@
-// lib/screens/article_detail_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class ArticleDetailScreen extends StatelessWidget {

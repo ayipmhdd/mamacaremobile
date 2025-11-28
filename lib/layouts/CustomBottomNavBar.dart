@@ -1,5 +1,4 @@
-// lib/widgets/custom_bottom_nav_bar.dart
-
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class CustomBottomNavBar extends StatelessWidget {

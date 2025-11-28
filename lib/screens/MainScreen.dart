@@ -1,10 +1,12 @@
-// lib/screens/main_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import '../layouts/CustomBottomNavBar.dart';
-import 'home/HomeScreen.dart';
-import 'artikel/ArtikelScreen.dart';
-import 'komunitas/ComunityScreen.dart';
-import 'profile/ProfileScreen.dart';
+
+import 'package:mamacaremobile/screens/home/HomeScreen.dart';
+import 'package:mamacaremobile/screens/artikel/ArtikelScreen.dart';
+import 'package:mamacaremobile/screens/profile/ProfileScreen.dart';
+import 'package:mamacaremobile/screens/komunitas/ComunityScreen.dart';
+
+import 'package:mamacaremobile/layouts/CustomBottomNavBar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

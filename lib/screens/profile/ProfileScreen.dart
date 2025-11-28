@@ -1,11 +1,12 @@
-// lib/screens/profile_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'KelolaProfileScreen.dart';
-import 'KataSandiScreen.dart';
-import 'KelolaAkunScreen.dart';
-import 'UserGuideScreen.dart';
-import 'HelpdeskScreen.dart';
-import 'FaqMamaCareScreen.dart';
+
+import 'package:mamacaremobile/screens/profile/HelpdeskScreen.dart';
+import 'package:mamacaremobile/screens/profile/UserGuideScreen.dart';
+import 'package:mamacaremobile/screens/profile/KataSandiScreen.dart';
+import 'package:mamacaremobile/screens/profile/KelolaAkunScreen.dart';
+import 'package:mamacaremobile/screens/profile/FaqMamaCareScreen.dart';
+import 'package:mamacaremobile/screens/profile/KelolaProfileScreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,9 +18,9 @@ class ProfileScreen extends StatelessWidget {
 
       // ===================== APPBAR ======================
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        centerTitle: true,
 
         leading: IconButton(
           icon: Container(

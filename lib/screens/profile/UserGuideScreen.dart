@@ -1,4 +1,4 @@
-// lib/screens/user_guide_screen.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class UserGuideScreen extends StatelessWidget {

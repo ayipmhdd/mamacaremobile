@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome/SplashScreen.dart';
 import 'package:flutter/services.dart';
-import 'services/ApiService.dart';
+
+import 'package:mamacaremobile/services/ApiService.dart';
+
+import 'package:mamacaremobile/screens/welcome/SplashScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

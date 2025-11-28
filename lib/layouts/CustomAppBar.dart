@@ -1,6 +1,7 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:mamacaremobile/components/IconNotifikasi.dart';
-import 'package:mamacaremobile/components/IconSearch.dart';
+
+import 'package:mamacaremobile/components/Icon.dart';
 
 class CustomAppBar {
   // === STYLE 1: APPBAR UNTUK HOMESCREEN ===
@@ -55,7 +56,7 @@ class CustomAppBar {
       actions: const [
         Padding(
           padding: EdgeInsets.only(right: 8),
-          child: IconSearch(),
+          child: const IconSearch(),
         ),
         Padding(
           padding: EdgeInsets.only(right: 12),

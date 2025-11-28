@@ -1,6 +1,9 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import '../models/ScheduleModel.dart';
+
+import 'package:mamacaremobile/components/Icon.dart';
+import 'package:mamacaremobile/widgets/CustomButton.dart';
+import 'package:mamacaremobile/models/ScheduleModel.dart';
 
 class ScheduleStackCard extends StatelessWidget {
   const ScheduleStackCard({super.key});
@@ -9,33 +12,30 @@ class ScheduleStackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final schedulesToRender = dummySchedules.reversed.toList();
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: List.generate(schedulesToRender.length, (index) {
-          final schedule = schedulesToRender[index];
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: List.generate(schedulesToRender.length, (index) {
+        final schedule = schedulesToRender[index];
 
-          double yOffset = (schedulesToRender.length - 1 - index) * 6.0;
-          double scale = 1.0 - ((schedulesToRender.length - 1 - index) * 0.05);
-          double opacity = 1.0 - ((schedulesToRender.length - 1 - index) * 0.1);
+        double yOffset = (schedulesToRender.length - 1 - index) * 6.0;
+        double scale = 1.0 - ((schedulesToRender.length - 1 - index) * 0.05);
+        double opacity = 1.0 - ((schedulesToRender.length - 1 - index) * 0.1);
 
-          return Transform.translate(
-            offset: Offset(0, yOffset),
-            child: Transform.scale(
-              scale: scale.clamp(0.85, 1.0),
-              alignment: Alignment.topCenter,
-              child: Opacity(
-                opacity: opacity,
-                child: AppointmentCard(
-                  schedule: schedule,
-                  isFrontCard: index == schedulesToRender.length - 1,
-                ),
+        return Transform.translate(
+          offset: Offset(0, yOffset),
+          child: Transform.scale(
+            scale: scale.clamp(0.85, 1.0),
+            alignment: Alignment.topCenter,
+            child: Opacity(
+              opacity: opacity,
+              child: AppointmentCard(
+                schedule: schedule,
+                isFrontCard: index == schedulesToRender.length - 1,
               ),
             ),
-          );
-        }),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
@@ -54,15 +54,15 @@ class AppointmentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(bottom: 18), // 🔥 tambahin biar gap bawah muncul
+      margin: const EdgeInsets.only(bottom: 18),
       decoration: BoxDecoration(
-        color: const Color(0xFFFF3EA5), // bg pink
+        color: const Color(0xFFFF3EA5),
       ),
       padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 20),
       child: Container(
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: Colors.black, // bg hitam
+          color: const Color(0xFFFAFAFA),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -72,9 +72,9 @@ class AppointmentCard extends StatelessWidget {
             Row(
               children: [
                 const CircleAvatar(
-                  backgroundColor: Color(0xFFFAFAFA),
+                  backgroundColor: Color(0xFFFF3EA5),
                   radius: 25,
-                  child: Icon(Icons.person, color: Color(0xFFFF3EA5)),
+                  child: Icon(Icons.person, color: Color(0xFFFAFAFA)),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -83,29 +83,22 @@ class AppointmentCard extends StatelessWidget {
                     children: [
                       Text(schedule.name,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFFFF3EA5),
                               fontWeight: FontWeight.bold,
                               fontSize: 16)),
                       Text(schedule.title,
                           style: const TextStyle(
-                              color: Colors.white70, fontSize: 14)),
+                              color: Color(0xB3FF3EA5), fontSize: 14)),
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFFF72B3),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.mail, color: Colors.white, size: 22),
-                ),
+                IconMail(),
               ],
             ),
 
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: Divider(color: Colors.white, thickness: 1),
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Divider(color: Color(0xFFFF3EA5), thickness: 1),
             ),
 
             Row(
@@ -115,10 +108,10 @@ class AppointmentCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text("Tanggal",
-                        style: TextStyle(color: Colors.white70, fontSize: 12)),
+                        style: TextStyle(color: Color(0xB3FF3EA5), fontSize: 12)),
                     Text(schedule.date,
                         style: const TextStyle(
-                            color: Colors.white,
+                            color: Color(0xFFFF3EA5),
                             fontWeight: FontWeight.bold,
                             fontSize: 14)),
                   ],
@@ -127,54 +120,45 @@ class AppointmentCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text("Waktu",
-                        style: TextStyle(color: Colors.white70, fontSize: 12)),
+                        style: TextStyle(color: Color(0xB3FF3EA5), fontSize: 12)),
                     Text(schedule.time,
                         style: const TextStyle(
-                            color: Colors.white,
+                            color: Color(0xFFFF3EA5),
                             fontWeight: FontWeight.bold,
                             fontSize: 14)),
                   ],
                 ),
               ],
             ),
+            const SizedBox(height: 16),
 
             if (isFrontCard) ...[
-              const SizedBox(height: 18),
               Row(
                 children: [
                   Expanded(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        elevation: 0,
-                      ),
+                    child: CustomButton(
+                      title: "Reschedule",
+                      width: double.infinity,
+                      height: 40,
+                      backgroundColor: const Color(0xFFFF3EA5),
+                      textColor: Colors.white,
+                      borderRadius: 24,
+                      fontSize: 14,
                       onPressed: () {},
-                      child: const Text("Re-schedule",
-                          style: TextStyle(
-                              color: Color(0xFFFF3EA5),
-                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFF72B3),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        elevation: 0,
-                      ),
+                    child: CustomButton(
+                      title: "Lihat profil",
+                      width: double.infinity,
+                      height: 39,
+                      fontSize: 14,
+                      outlined: true,
+                      borderColor: const Color(0xFFFF3EA5),
+                      textColor: const Color(0xFFFF3EA5),
+                      borderRadius: 24,
                       onPressed: () {},
-                      child: const Text("Lihat profil",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],

@@ -1,4 +1,4 @@
-// ServiceBox.dart
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class ServiceBox extends StatelessWidget {
@@ -16,24 +16,17 @@ class ServiceBox extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
-
       child: Container(
         width: 70,
         height: 70,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFFF3EA5).withOpacity(0.2),
-              blurRadius: 4,
-            ),
-            const BoxShadow(
-              color: Colors.white,
-            )
-          ],
+          border: Border.all(
+            color: const Color(0xFFFF3EA5), // border warna pink
+            width: 0.8,
+          ),
         ),
-
         child: Center(
           child: Text(
             label,

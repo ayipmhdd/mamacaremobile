@@ -1,20 +1,22 @@
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
-import 'package:mamacaremobile/layouts/CustomAppBar.dart';
 import 'package:mamacaremobile/routes/Route.dart';
+
+import 'package:mamacaremobile/screens/layanan/PanduanNutrisi.dart';
+import 'package:mamacaremobile/screens/layanan/PanduanAktivitas.dart';
+import 'package:mamacaremobile/screens/layanan/KalenderKehamilan.dart';
+import 'package:mamacaremobile/screens/layanan/CareBot.dart';
+
+import 'package:mamacaremobile/layouts/CustomAppBar.dart';
+import 'package:mamacaremobile/layouts/DoctorListItem.dart';
+import 'package:mamacaremobile/layouts/ArticleSection.dart';
+import 'package:mamacaremobile/layouts/ScheduleStackCard.dart'; 
+
+import 'package:mamacaremobile/widgets/ServiceBox.dart';
 import 'package:mamacaremobile/widgets/CustomButton.dart';
 import 'package:mamacaremobile/widgets/CustomText.dart';
-import '../../layouts/ScheduleStackCard.dart'; 
-import '../../widgets/ServiceBox.dart';
-import '../../models/ServiceModel.dart';
-import '../../layouts/ArticleSection.dart';
-import '../../layouts/DoctorListItem.dart';
-import '../layanan/PanduanNutrisi.dart';
-import '../layanan/PanduanAktivitas.dart';
-import '../layanan/KalenderKehamilan.dart';
-import '../komunitas/ComunityScreen.dart';
-import '../layanan/CareBot.dart';
+
+import 'package:mamacaremobile/models/ServiceModel.dart';
 
 class HomeScreen extends StatefulWidget {
   final String username;
@@ -41,19 +43,19 @@ class HomeScreenState extends State<HomeScreen> {
 
   void navigateToService(BuildContext context, String label) {
     switch (label) {
-      case "Panduan Nutrisi":
+      case "Nutrisi":
         Navigator.push(context, MaterialPageRoute(builder: (_) => const PanduanNutrisi()));
         break;
-      case "Panduan Aktivitas":
+      case "Aktivitas":
         Navigator.push(context, MaterialPageRoute(builder: (_) => const PanduanAktivitas()));
         break;
-      case "Kalender Kehamilan":
+      case "Kalender":
         Navigator.push(context, MaterialPageRoute(builder: (_) => const KalenderKehamilan()));
         break;
-      case "Komunitas":
-        Navigator.push(context, MaterialPageRoute(builder: (_) => const CommunityScreen()));
+      case "Chat":
+        // Navigator.push(context, MaterialPageRoute(builder: (_) => const CommunityScreen()));
         break;
-      case "CareBot":
+      case "Mama.ai":
         Navigator.push(context, MaterialPageRoute(builder: (_) => const CareBot()));
         break;
       default:
@@ -64,6 +66,7 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // APPBAR
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: CustomAppBar.home(
         username: widget.username,
@@ -78,72 +81,72 @@ class HomeScreenState extends State<HomeScreen> {
             children: [
               const ScheduleStackCard(),
 
-              /// Konten utama dengan padding
+              /// KONTEN
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     /// LAYANAN
-                    const CustomText(
-                      "Layanan",
-                      type: TextType.h5,
-                      color: Color(0xFF191F24),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: const CustomText(
+                        "Layanan",
+                        type: TextType.h5,
+                        color: Color(0xFF191F24),
+                      ),
                     ),
-
-                    const SizedBox(height: 10),
-
-                    GridView.count(
-                      crossAxisCount: 5,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: dummyServiceLabels.map((label) {
-                        return ServiceBox(
-                          label: label,
-                          onTap: () => navigateToService(context, label),
-                        );
-                      }).toList(),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 24),
+                      child: GridView.count(
+                        crossAxisCount: 5,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: dummyServiceLabels.map((label) {
+                          return ServiceBox(
+                            label: label,
+                            onTap: () => navigateToService(context, label),
+                          );
+                        }).toList(),
+                      ),
                     ),
-
-                    const SizedBox(height: 20),
 
                     /// DOKTER
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const CustomText(
-                          "Dokter",
-                          type: TextType.h5,
-                          color: Color(0xFF191F24),
-                        ),
-                        CustomTextButton(
-                          title: "Semua",
-                          textColor: const Color(0xFF787A7E),
-                          onPressed: () => AppRoute.toDoctor(context),
-                        ),
-                      ],
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CustomText(
+                            "Dokter",
+                            type: TextType.h5,
+                            color: Color(0xFF191F24),
+                          ),
+                          CustomTextButton(
+                            title: "Semua",
+                            textColor: const Color(0xFF787A7E),
+                            onPressed: () => AppRoute.toDoctor(context),
+                          ),
+                        ],
+                      ),
                     ),
-                    Column(children: List.generate(4, (index) => const DoctorListItem()),),
-
-                    const SizedBox(height: 20),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 24),
+                      child: Column(
+                        children: List.generate(4, (index) => const DoctorListItem()),
+                      ),
+                    ),
 
                     /// ARTIKEL
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const CustomText(
-                          "Artikel",
-                          type: TextType.h5,
-                          color: Color(0xFF191F24),
-                        ),
-                        CustomTextButton(
-                          title: "Semua",
-                          textColor: const Color(0xFF787A7E),
-                          onPressed: () => AppRoute.toArticle(context),
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: const CustomText(
+                        "Artikel",
+                        type: TextType.h5,
+                        color: Color(0xFF191F24),
+                      ),
                     ),
                     const ArticleSection(),
                   ],
